@@ -1,27 +1,32 @@
+import math as m
+from sympy import *
 def f(f):
-    x = sym.Symbol("x")
+    x = Symbol("x")
+    e = m.e
+    pi = m.pi
+    f = eval(f)
     return f
 def g(g):
-    x = sym.Symbol("x")
+    x = Symbol("x")
+    e = m.e
+    pi = m.pi
+    g = eval(g)
     return g
 def f1(f):
-    x = sym.Symbol("x")
-    f1 = sym.diff(f)
+    x = Symbol("x")
+    e = m.e
+    pi = m.pi
+    f1 = diff(f)
     return f1
 def f2(f1):
-    x = sym.Symbol("x")
-    f2 = sym.diff(f1)
+    x = Symbol("x")
+    e = m.e
+    pi = m.pi
+    f2 = diff(f1)
     return f2
-
-
-import sys
-import sympy as sym
-x = sym.Symbol("x")
-f = f(sys.argv[1])
-g = g(sys.argv[2])
-print(f)
-f1 = f1(f)
-print(f1)
-f2 = f2(f1)
-print(f2)
-print(g)
+def evalfunct(f,y):
+    x = Symbol("x")
+    e = m.e
+    pi = m.pi
+    evalf = f.subs(x,y)
+    return evalf
