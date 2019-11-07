@@ -8,8 +8,9 @@ niter = int(raw_input("Please enter the maximum number of iterations: "))
 fx0 = evalfunct(f,x0)
 fxList = []
 xList = []
+pandas = {}
 if fx0 == 0:
-    print(x0," es raiz")
+    print(x0," its a root")
     sys.exit()
 else:
     x1 = x0 + delta
@@ -26,8 +27,8 @@ else:
         pandas = {'x':xList,'fx':fxList}
     print(pd.DataFrame(data=pandas))
     if fx1 == 0:
-        print(x1, " es raiz")
+        print(x1, " its a root")
     elif fx0*fx1 < 0:
-        print("Hay una raiz entre ", x0, " y ", x1)
+        print("There is a root between ", x0, " and ", x1)
     else:
-        print("Fracaso en ", niter, " iteraciones")
+        print("Failed with ", niter, " iterations")
