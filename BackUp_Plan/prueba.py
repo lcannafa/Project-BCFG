@@ -1,0 +1,12 @@
+import numpy as np
+b = np.array([1,2,3])
+print(b)
+x = b.reshape((3,1))
+print(x)
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(a)
+c = a.dot(b).reshape((3,1))
+print(c)
+d = np.hstack((a,x))
+print(d)
+print(d[1][2])

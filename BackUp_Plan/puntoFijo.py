@@ -23,9 +23,9 @@ while fx != 0 and eAb > tolerancia and contador < niter:
     eR = eAb/xn
     eAbList.append(eAb)
     eRList.append(eR)
-    pandas = {'Xn':xnList,'fx':fxList,'Absolute Error':eAbList,'Relative Error':eRList}
     xa = xn
     contador = contador + 1
+    pandas = {'Xn':xnList,'fx':fxList,'Absolute Error':eAbList,'Relative Error':eRList}
 print(pd.DataFrame(data=pandas))
 if fx == 0:
     print(xa, "its a root")
