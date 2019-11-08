@@ -21,4 +21,4 @@ b = s[:,min(len(s),len(s.T))]
 print(s)
 print(a)
 print(b)
-#print(regresiva(a,b))
+print(regresiva(a,b))
