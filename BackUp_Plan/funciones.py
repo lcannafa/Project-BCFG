@@ -1,5 +1,7 @@
 import math as m
+import numpy as np
 from sympy import *
+
 def f(f):
     x = Symbol("x")
     e = m.e
@@ -30,3 +32,13 @@ def evalfunct(f,y):
     pi = m.pi
     evalf = f.subs(x,y)
     return evalf
+def regresiva(a,b):
+    n = len(b)
+    x = [0 for i in range(n)]
+    x[n-1] = b[n-1,0]/a[n-1,n-1]
+    for i in reversed(range(0,n-1)):
+        suma = 0
+        for j in range((i+1),n):
+            suma = suma + a[i,j]*x[j]
+        x[i] = (b[i,0] - suma)/a[i,i]
+    return x
