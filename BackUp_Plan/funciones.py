@@ -59,12 +59,13 @@ def intercambioFila(a,fi1,fi2):
     return f
 def intercambioColumna(a,c1,c2):
     f = np.copy(a)
-    f[:,c1] = a[:,c2]
-    f[:,c2] = a[:,c1]
+    f[:,[c1]] = a[:,[c2]]
+    f[:,[c2]] = a[:,[c1]]
     return f
+
 def pivoteoParcial(a,b,k):
     s = np.hstack(((a,b)))
-    n = len(a) - 1
+    n = len(s) - 1
     mayor = abs(k)
     filaMayor = k
     for t in range(k,n):
@@ -75,16 +76,18 @@ def pivoteoParcial(a,b,k):
         print("The system doesnt have a unique solution")
     elif filaMayor != k :
         s = intercambioFila(s,filaMayor,k)
+    s = s[:,:-1]
     return s
 def pivoteoTotal(a,b,k):
     s = np.hstack(((a,b)))
     n = len(a) - 1
+    marcas = np.matrix('1 2 3 4')
     mayor = 0
     filaMayor = k
     columnaMayor = k
-    for r in range(k,n):
-        for t in range(k,n):
-            if(abs(s[r,t]) >  mayor):
+    for r in range (k,n):
+        for t in range (k,n):
+            if(abs(s[r,t]) > mayor):
                 mayor = abs(s[r,t])
                 filaMayor = r
                 columnaMayor = t
@@ -94,4 +97,7 @@ def pivoteoTotal(a,b,k):
         s = intercambioFila(s,filaMayor,k)
     elif columnaMayor != k:
         s = intercambioColumna(s,columnaMayor,k)
-        print("The columns ", columnaMayor, " and ", k, " were swaped")
+        marcas = intercambioColumna(marcas,columnaMayor,k)
+    s = s[:,:-1]
+    print("The system is: ", marcas)
+    return s
