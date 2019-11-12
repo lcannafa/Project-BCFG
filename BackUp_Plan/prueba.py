@@ -8,7 +8,7 @@ matrix = '2 -3 4 1;-4 2 1 -2;1 3 -5 3;-3 -1 1 -1'
 vector = '10 -10 32 -21'
 b = np.matrix(vector).astype(float)
 print(b)
-print('erga ',b[0,2])
+print('erga '+  str(b[0,2]))
 b = b.T
 print(b)
 print('saep', b[3,0])
@@ -27,3 +27,11 @@ U = np.zeros((n,n))
 #U = [[0.0 for j in range(n)] for i in range(n)]
 print(L)
 print(U)
+strx = '2 2.2 2.4 2.6 2.8'
+x = np.fromstring(strx, dtype=float, sep=' ')
+#sneo = strx[:5]+strx[9:]
+sneo = strx.replace('2.4','')
+print(sneo)
+xneo = np.fromstring(sneo, dtype=float, sep=' ')
+print(xneo)
+print(strx[5:9])
