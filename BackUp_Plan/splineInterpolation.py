@@ -4,9 +4,9 @@ import sys
 from scipy import interpolate
 from scipy.interpolate import CubicSpline
 
-strx = '0 1 2 3 4 5'
+strx = '0 1 2 3'
 x_points = np.fromstring(strx, dtype=float, sep=' ')
-strfx = '12 14 22 39 58 77'
+strfx = '12 14 22 39'
 y_points = np.fromstring(strfx, dtype=float, sep=' ')
 strval = '1.25'
 val = float(strval)
